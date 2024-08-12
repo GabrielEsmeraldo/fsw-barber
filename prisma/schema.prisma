@@ -26,8 +26,8 @@ model Barbershop {
   id                String              @id @default(uuid())
   name              String
   description       String
-  adress            String
-  imageURL          String
+  address           String
+  imageUrl          String
   phones            String[]
   createdAt         DateTime            @default(now())
   updatedAt         DateTime            @updatedAt
@@ -38,8 +38,7 @@ model BarbershopService {
   id           String     @id @default(uuid())
   name         String
   description  String
-  adress       String
-  imageURL     String
+  imageUrl     String
   price        Decimal    @db.Decimal(10, 2)
   barbershopId String
   barbershop   Barbershop @relation(fields: [barbershopId], references: [id])
